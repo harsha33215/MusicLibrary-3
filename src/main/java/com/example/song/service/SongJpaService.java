@@ -66,6 +66,7 @@ public class SongJpaService implements SongRepository {
             if (song.getMusicDirector() != null) {
                 newSong.setMusicDirector(song.getMusicDirector());
             }
+            songJpaRepository.save(newSong);
             return newSong;
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
